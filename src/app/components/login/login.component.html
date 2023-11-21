@@ -1,0 +1,36 @@
+<div class="container-fluid d-flex  bg-info justify-content-center align-items-center">
+    <div class="box bg-warning m-5 p-5">
+        <h2 class="text text-danger text-center">LOGIN FORM </h2>
+        
+            
+                <form [formGroup]="userForm" (ngSubmit)="userData()">
+                   
+                    
+                    <div class="mb-3">
+                        <label for="">User Email</label>
+                        <input type="email" class="form-control " formControlName="userName" required
+                            placeholder="User Email"><br>
+                        <div class="alert alert-info" *ngIf="!f['userName'].valid && f['userName'].touched">
+                            felled the valid email
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="">password</label>
+                        <input type="text" class="form-control" formControlName="pass" required
+                            placeholder="Enter secured password"><br>
+                            <div class="alert alert-danger" *ngIf="!f['pass'].valid && f['pass'].touched">
+                                Please enter Password
+                            </div>
+            
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit"  class=" submit bg-danger text-white p-2 rounded-pill"
+                            [disabled]="!userForm.valid">Submit</button>
+                        </div>
+                    </form>
+
+
+
+      
+</div>

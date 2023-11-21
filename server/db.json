@@ -1,0 +1,32 @@
+{
+  "user": [
+    {
+      "name": "raghav raj",
+      "email": "shalukashyap382@gmail.com",
+      "phone": "8077869222",
+      "city": "shaharanpur",
+      "id": 2
+    },
+    {
+      "name": "palpal",
+      "email": "shalukashyap382@gmail.com",
+      "phone": "8077869222",
+      "city": "Noida",
+      "id": 3
+    },
+    {
+      "name": "kapil",
+      "email": "kashyap@gmail.com",
+      "phone": "5246258658",
+      "city": "chandighare",
+      "id": 4
+    },
+    {
+      "name": "shalu kashyap",
+      "email": "shalukashyap382@gmail.com",
+      "phone": "08077869222",
+      "city": "Noida",
+      "id": 5
+    }
+  ]
+}

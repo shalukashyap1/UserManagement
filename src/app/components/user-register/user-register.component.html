@@ -1,0 +1,168 @@
+<div class="container-fluid vh-100 d-flex justify-content-center align-items-center">
+    <div class="box bg-light">
+        <div class="div1">
+            <h3 class="text1 text-success text-center">User Privacy Protection Cheat Sheet</h3>
+            <div class="div">
+                <h4 class="text2 text-success ms-1">Introduction</h4>
+                <p>
+                    This OWASP Cheat Sheet introduces mitigation methods that web developers may utilize in order to
+                    protect their users from a vast array of potential threats and aggressions that might try to
+                    undermine their privacy and anonymity. This cheat sheet focuses on privacy and anonymity threats
+                    that users might face by using online services, especially in contexts such as social networking and
+                    communication platforms.
+                </p>
+                <h4 class="text2 text-success ms-1">Guidelines</h4>
+                <h5 class="text3 text-warning ms-1">Strong Cryptography</h5>
+                <p>
+                    Any online platform that handles user identities, private information or communications must be
+                    secured with the use of strong cryptography. User communications must be encrypted in transit and
+                    storage. User secrets such as passwords must also be protected using strong, collision-resistant
+                    hashing algorithms with increasing work factors, in order to greatly mitigate the risks of exposed
+                    credentials as well as proper integrity control.
+                </p>
+                <p>
+                    To protect data in transit, developers must use and adhere to TLS/SSL best practices such as
+                    verified certificates, adequately protected private keys, usage of strong ciphers only, informative
+                    and clear warnings to users, as well as sufficient key lengths. Private data must be encrypted in
+                    storage using keys with sufficient lengths and under strict access conditions, both technical and
+                    procedural. User credentials must be hashed regardless of whether or not they are encrypted in
+                    storage.
+                </p>
+                <h5 class="text3 text-warning ms-1">Support HTTP Strict Transport Security</h5>
+                <p>
+                    HTTP Strict Transport Security (HSTS) is an HTTP header set by the server indicating to the user
+                    agent that only secure (HTTPS) connections are accepted, prompting the user agent to change all
+                    insecure HTTP links to HTTPS, and forcing the compliant user agent to fail-safe by refusing any
+                    TLS/SSL connection that is not trusted by the user.HSTS has average support on popular user agents,
+                    such as Mozilla Firefox and Google Chrome. Nevertheless, it remains very useful for users who are in
+                    consistent fear of spying and Man in the Middle Attacks.
+                </p>
+                <h5 class="text3 text-warning ms-1"> Digital Certificate Pinning</h5>
+                <p>
+                    Certificate Pinning is the practice of hardcoding or storing a predefined set of information
+                    (usually hashes) for digital certificates/public keys in the user agent (be it web browser, mobile
+                    app or browser plugin) such that only the predefined certificates/public keys are used for secure
+                    communication, and all others will fail, even if the user trusted (implicitly or explicitly) the
+                    other certificates/public keys.
+                </p>
+                <p>Some advantages for pinning are:</p>
+                <p>
+                    In the event of a CA compromise, in which a compromised
+                    CA trusted by a user can issue certificates for any domain,
+                    allowing evil perpetrators to eavesdrop on users.
+                    In environments where users are forced to accept a potentially-malicious root CA,
+                    such as corporate environments or national PKI schemes.
+                    In applications where the target demographic may not understand certificate warnings,
+                    and is likely to just allow any invalid certificate.
+
+                </p>
+                <h5 class="text3 text-warning ms-1">Panic Modes</h5>
+                <p>
+                    A panic mode is a mode that threatened users can refer to when they fall under direct threat to
+                    disclose account credentials.
+
+                    Giving users the ability to create a panic mode can help them survive these threats, especially in
+                    tumultuous regions around the world. Unfortunately many users around the world are subject to types
+                    of threats that most web developers do not know of or take into account.
+
+                    Examples of panic modes are modes where distressed users can delete their data upon threat, log into
+                    fake inboxes/accounts/systems, or invoke triggers to backup/upload/hide sensitive data.
+                </p>
+                <p>
+                    The appropriate panic mode to implement differs depending on the application type. A disk encryption
+                    software such as VeraCrypt might implement a panic mode that starts up a fake system partition if
+                    the user entered their distressed password.
+
+                    Email providers might implement a panic mode that hides predefined sensitive emails or contacts,
+                    allowing reading innocent email messages only, usually as defined by the user, while preventing the
+                    panic mode from overtaking the actual account.
+                </p>
+                <p>
+
+                    An important note about panic modes is that they must not be easily discoverable, if at all. An
+                    adversary inside a victim's panic mode must not have any way, or as few possibilities as possible,
+                    of finding out the truth. This means that once inside a panic mode, most non-sensitive normal
+                    operations must be allowed to continue (such as sending or receiving email), and that further panic
+                    modes must be possible to create from inside the original panic mode (If the adversary tried to
+                    create a panic mode on a victim's panic mode and failed, the adversary would know they were already
+                    inside a panic mode, and might attempt to hurt the victim).
+                </p>
+                <p>
+                    Another solution would be to prevent panic modes from being generated from the user account, and
+                    instead making it a bit harder to spoof by adversaries. For example it could be only created Out Of
+                    Band, and adversaries must have no way to know a panic mode already exists for that particular
+                    account.
+
+                </p>
+                <h5 class="text3 text-warning ms-1">Honesty & Transparency</h5>
+                <p>
+                    If the web application cannot provide enough legal or political protections to the user, or if the
+                    web application cannot prevent misuse or disclosure of sensitive information such as logs, the truth
+                    must be told to the users in a clear understandable form, so that users can make an educated choice
+                    about whether or not they should use that particular service.
+
+                    If it doesn't violate the law, inform users if their information is being requested for removal or
+                    investigation by external entities.
+                </p>
+                <p>
+                    Honesty goes a long way towards cultivating a culture of trust between a web application and its
+                    users, and it allows many users around the world to weigh their options carefully, preventing harm
+                    to users in various contrasting regions around the world.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="box">
+        <h2 class="text text-danger text-center">USER REGISTRATION </h2>
+        <div class="col-12">
+            <div class="con p-5">
+                <form [formGroup]="userForm" (ngSubmit)="userData()">
+                    <div class="mb-3">
+                        <label for="">Name</label>
+                        <input type="text" class="form-control" formControlName="Name" required
+                            placeholder="User Name"><br>
+                        <div class="alert alert-info" *ngIf="!f['Name'].valid && f['Name'].touched">
+                            Name must contain atleast 5 characters
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">User Email</label>
+                        <input type="email" class="form-control" formControlName="userName" required
+                            placeholder="User Email"><br>
+                        <div class="alert alert-info" *ngIf="!f['userName'].valid && f['userName'].touched">
+                            felled the valid email
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Mobile Number</label>
+                        <input type="text" class="form-control" formControlName="phone" required
+                            placeholder="Contact Number"><br>
+                        <div class="alert alert-info" *ngIf="!f['phone'].valid && f['phone'].touched">
+                            There must be 10 digits
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">City</label>
+                        <input type="text" class="form-control" formControlName="city" required
+                            placeholder="City Name"><br>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Adhar Number</label>
+                        <input type="text" class="form-control" formControlName="Adhar" required
+                            placeholder="Adhar Number"><br>
+                        <!-- <div class="alert alert-info" *ngIf="!f['Adhar'].valid && f['Adhar'].touched">
+                            There must be 12 digits
+                        </div> -->
+                    </div>
+                    <div class="mb-3">
+                        <button type="submit" class=" submit bg-danger text-white"
+                            [disabled]="!userForm.valid">Submit</button>
+                        </div>
+
+                </form>
+
+
+            </div>
+
+        </div>

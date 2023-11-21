@@ -1,0 +1,22 @@
+.container-fluid{
+    background-image: url("https://wallpapertag.com/wallpaper/full/2/2/6/118464-neutral-background-1920x1080-windows.jpg");
+    background-size: cover;
+}
+.container{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+ 
+}
+.box{
+    width: 400px;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px black;
+    overflow: hidden;
+    transition: 0.5 ease-in-out;
+}
+.box:hover{
+    
+transform:scale(1.1);
+
+}

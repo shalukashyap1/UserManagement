@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.row-12{
+    background-image: url("https://wallpapertag.com/wallpaper/full/2/2/6/118464-neutral-background-1920x1080-windows.jpg");
+    background-size: cover;
+  
+}
+.first{
+   margin-top: 8px;
+   padding: 10px;
+   border-radius: 10px;
+  
+   box-shadow: 2px 2px 10px black;
+   overflow: hidden;
+  
+}
+.container1-fluid{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.div1{
+    height: 400px;
+    margin-top:70px;
+    display: flex;
+}
+.card{
+    height: 290px;
+    width: 300px;
+    margin: 20px;
+    overflow: hidden; 
+    box-shadow: 5px 5px 20px black;
+  
+}
+.sec{
+   height: 300px;
+   /* width: 300px; */
+   border-radius: 10px; 
+    
+
+
+}
+
+.intro{
+    margin-top: 230px;
+    height: 60px;
+    width: 300px;
+    padding: 6px;
+    box-sizing: border-box;
+    position: absolute;
+    
+    background-color: rgba(29, 88, 226, 0.5);
+    color: white;
+    transition: .5s;
+}
+h1
+    {
+    margin: 10px;
+    font-size: 40px;
+}
+p{
+    margin: 20px;
+    visibility: hidden;
+    opacity: 0;
+   
+}
+.card:hover{
+    cursor: pointer;
+}
+.card:hover .intro{
+    height: 240px;
+    bottom:25px;
+    background: rgb(102, 148, 233);
+}
+.card:hover p{
+    opacity: 1;
+    visibility: visible;
+}

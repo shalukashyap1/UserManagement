@@ -1,0 +1,12 @@
+table{
+    border-radius: 20px;
+    margin-left: 380px;
+    margin-top: 150px;
+}
+th{
+    padding: 25px;
+}
+td{
+    padding: 20px;
+    color: yellow;
+}

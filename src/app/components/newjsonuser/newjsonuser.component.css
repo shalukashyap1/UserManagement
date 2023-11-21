@@ -1,0 +1,18 @@
+.box{
+    width: 90%;
+    height: 450px;
+    
+    box-shadow: 5px 5px 20px rgb(21, 202, 223);
+    /* overflow: hidden;
+    overflow-y: visible; */
+}
+/* .main{
+    margin-top: 10px;
+} */
+.bi{
+background-color: green;
+border-radius: 10px 0px 10px 0px;    
+}
+.bit{
+    text-shadow: 20px .1px  red;
+}

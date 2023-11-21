@@ -1,0 +1,43 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="box bg-warning p-5 m-5">
+        <h1 class="lf text-success">LoginForm</h1>
+
+        <form #lgForm="ngForm" (ngSubmit)="subData(lgForm.value);lgForm.reset()">
+            <div class="mb-3">
+                <label for="">Name</label>
+                <input type="phone" name="name" ngModel #fname="ngModel" required minlength="5"
+                    placeholder="Enter Your Name" class="form-control">
+                <div class="alert alert-danger" *ngIf="!fname.valid && fname.touched">
+                    Please enter some value
+                    <span *ngIf="fname.errors"> Name length must be atleast 5 character long </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input type="email" name="email" ngModel #email="ngModel" required placeholder="Enter Your Email"
+                    class="form-control">
+                <div class="alert alert-danger" *ngIf="!email.valid && email.touched">
+                    Please enter mail id
+
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">Mobile</label>
+                <input type="text" name="phone" ngModel #mob="ngModel" maxlength="10" minlength="10" required placeholder="Contact Number" class="form-control">
+
+                <div class="alert alert-danger" *ngIf="!mob.valid && mob.touched">
+                    Please enter Contact Number
+                    <span *ngIf="mob.errors"> There must be at least 10 digits </span>
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="">City</label>
+                <input type="text" name="city" ngModel placeholder="Enter your city" class="form-control">
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success" >ADD</button>
+            </div>
+        </form>
+    </div>
+</div>
+<!-- (click)="showUser()" -->

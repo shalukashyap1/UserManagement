@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+.card img{
+    width: 215px;
+    height: 200px;
+   
+}
+.card{
+    margin: 10px;
+    width: 250px;
+    height: 400px;
+    margin-left: 80px;
+    box-shadow: 5px 5px 20px rgb(115, 220, 255);
+    
+    
+    
+}
+.card-body{
+    font-family: 'Russo One', sans-serif;
+}
+.btn{
+    margin-left: 100px;
+}
+
+
+
+

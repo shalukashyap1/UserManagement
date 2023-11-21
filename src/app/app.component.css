@@ -1,0 +1,21 @@
+nav{
+    border-bottom: 2px solid rgb(245, 239, 239);
+}
+ul{
+    list-style-type: none;
+    
+}
+ul li{
+    display: inline-block;
+    }
+.row-12{
+    margin-left: 150px;
+}
+.submit{
+    margin-left: 250px;
+}
+.logo{
+margin-right: 200px;
+   border-radius: 50px;
+}
+

@@ -1,0 +1,10 @@
+button{
+    margin-left: 1200px;
+    margin-top: 20px;
+}
+.container-fluid{
+    background-image:url("https://wallpaperaccess.com/full/3214373.jpg");
+    background-size: cover;
+    overflow: hidden;
+    overflow-y: scroll;
+}

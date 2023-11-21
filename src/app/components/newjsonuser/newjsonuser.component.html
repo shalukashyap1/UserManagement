@@ -1,0 +1,26 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="box bg-warning p-5 m-5">
+        <button class="animate__animated bg-info animate__swing border-0 p-2 mb-2" (click)="addData()">Add User</button>
+    <table class="table">
+        <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>EMAIL</th>
+            <th>PHONE</th>
+            <th>CITY</th>
+            <th>UPDATE/DELETE</th>
+        </tr>
+        <tr class="main" *ngFor="let item of users">
+          <td>{{item.id}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.email}}</td>
+          <td>{{item.phone}}</td>
+           <td>{{item.city}}</td>
+           <td>
+            <a (click)="edit(item.id)"><i class="bi bi-pencil-fill  "></i></a>
+            <a (click)="fresh(item.id)"><i class="bit bi-trash " ></i></a>
+        </td>
+        </tr>
+    </table>
+    </div>
+</div>

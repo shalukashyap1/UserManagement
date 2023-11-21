@@ -1,0 +1,17 @@
+<div class="container-fluid bg-light vh-100">
+    
+    <div class="dropdown me-5">
+        <button class="btn btn-success dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Admin & Users Details
+            
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+            <li> <a [routerLink]="['/database/admin']" routerLinkActive="router-link-active"> About Admin </a> </li>
+
+            <li> <a [routerLink]="['/database/user']" routerLinkActive="router-link-active"> About Users</a> </li>
+        </ul>
+    </div>
+    
+    <router-outlet></router-outlet>
+</div>

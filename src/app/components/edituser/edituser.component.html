@@ -1,0 +1,31 @@
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    <div class="box bg-warning p-5 m-5">
+        <form #lgForm="ngForm" (ngSubmit)="savData(lgForm.value);lgForm.reset()">
+            <div class="mb-3">
+                <label for="">Name</label>
+                <input type="text" name="name" ngModel 
+                placeholder="Enter Your Name"  ngModel={{newData.name}} class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="">Email</label>
+                <input type="email" name="email"  ngModel={{newData.email}} ngModel placeholder="Enter Your Email"
+                    class="form-control">
+              
+            </div>
+            <div class="mb-3">
+                <label for="">Mobile</label>
+                <input type="phone" name="phone"  ngModel={{newData.phone}} ngModel 
+                placeholder="Contact Number" class="form-control">
+
+                
+            </div>
+            <div class="mb-3">
+                <label for="">City</label>
+                <input type="text" name="city"  ngModel={{newData.city}} ngModel placeholder="Enter your city" class="form-control">
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-info">UPDATE</button>
+            </div>
+        </form>
+    </div>
+</div>

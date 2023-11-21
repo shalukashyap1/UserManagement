@@ -1,0 +1,23 @@
+
+
+    <table class="table table-border w-50 bg-success">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>DEPARTMENT</th>
+                <th>RESPONSBILITY</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr  (click)="showDetails(d)" *ngFor="let d of adminData ">
+                
+                 
+                    <td>{{d.id}}</td>
+                    <td>{{d.name}}</td>
+                    <td>{{d.dep}}</td>
+                    <td>{{d.resp}}</td> 
+              
+            </tr>
+        </tbody>
+    </table>
